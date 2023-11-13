@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://brrbp21iqgtt4"]
+
+[ext_resource type="Texture2D" uid="uid://bpacyp6i7tiwy" path="res://game_assets/Sunny-land-files/Sunny-land-files/Graphical Assets/spritesheets/gem.png" id="1_f633s"]
+[ext_resource type="Script" path="res://collectables/gem.gd" id="1_s32tb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0gvvs"]
+radius = 5.09902
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmq6i"]
+atlas = ExtResource("1_f633s")
+region = Rect2(0, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfjy4"]
+atlas = ExtResource("1_f633s")
+region = Rect2(15, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngxuk"]
+atlas = ExtResource("1_f633s")
+region = Rect2(30, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opo20"]
+atlas = ExtResource("1_f633s")
+region = Rect2(45, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta1yl"]
+atlas = ExtResource("1_f633s")
+region = Rect2(60, 0, 15, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jha3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmq6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfjy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngxuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opo20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta1yl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Gem" type="Area2D"]
+script = ExtResource("1_s32tb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0gvvs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jha3t")
+autoplay = "default"
+frame_progress = 0.539797
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

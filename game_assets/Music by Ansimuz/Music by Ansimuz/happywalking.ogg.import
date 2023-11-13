@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c2v2fdar70vxf"
+path="res://.godot/imported/happywalking.ogg-b049d1994a8d78f59a0cbfa959306003.oggvorbisstr"
+
+[deps]
+
+source_file="res://game_assets/Music by Ansimuz/Music by Ansimuz/happywalking.ogg"
+dest_files=["res://.godot/imported/happywalking.ogg-b049d1994a8d78f59a0cbfa959306003.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
