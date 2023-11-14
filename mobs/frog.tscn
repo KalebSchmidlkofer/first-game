@@ -129,6 +129,7 @@ frame_progress = 0.637639
 [node name="PlayerDetection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+visible = false
 shape = SubResource("CircleShape2D_e7mlt")
 
 [node name="KillFrog" type="Area2D" parent="."]

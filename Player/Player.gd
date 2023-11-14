@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+var is_jumping: bool = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = $AnimationPlayer
@@ -47,7 +47,6 @@ func _input(event: InputEvent):
 
 
 func _on_kill_zone_body_entered(body):
-	print(body.name)
 	if body.name == 'Player':
 		Game.playerHP == 0
 		

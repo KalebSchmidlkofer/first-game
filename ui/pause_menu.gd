@@ -27,3 +27,13 @@ func _on_resume_pressed():
 func _on_exit_pressed():
 	get_tree().quit()
 	pass # Replace with function body.
+
+
+func _on_save_pressed():
+	Utils.saveGame()
+	pass # Replace with function body.
+
+
+func _on_load_pressed():
+	Utils.loadGame()
+	pass # Replace with function body.

@@ -40,6 +40,7 @@ func _on_kill_frog_body_entered(body):
 		death()
 		player.velocity.y -= 500
 
+
 func _on_player_collision_body_entered(body):
 	if body.name == "Player":
 		Game.playerHP -= 3
@@ -47,7 +48,6 @@ func _on_player_collision_body_entered(body):
 		
 func death():
 	Game.Gold += 5
-	Utils.saveGame()
 	chase = false
 	$AnimatedSprite2D.play('death')
 	await $AnimatedSprite2D.animation_finished

@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://me6vm4gnqmac"]
+
+[sub_resource type="GDScript" id="GDScript_75nj4"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"HP: \" +  str(Game.playerHP)
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_cgb5h"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"Gold: \" +  str(Game.Gold)
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_ikqof"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"Cherry: \" +  str(Game.Cherry)
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_cj1w4"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"GEM: \" +  str(Game.Gem)
+	
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.063
+anchor_bottom = 0.164
+offset_right = -72.576
+offset_bottom = -106.272
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hp" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Hp"
+vertical_alignment = 1
+script = SubResource("GDScript_75nj4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Gold" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Gold"
+vertical_alignment = 1
+script = SubResource("GDScript_cgb5h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cherry" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Cherry"
+vertical_alignment = 1
+script = SubResource("GDScript_ikqof")
+metadata/_edit_use_anchors_ = true
+
+[node name="Gem" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Gem"
+vertical_alignment = 1
+script = SubResource("GDScript_cj1w4")
+metadata/_edit_use_anchors_ = true

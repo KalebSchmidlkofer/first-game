@@ -447,15 +447,16 @@ script/source = "extends Node2D
 
 
 var Cherry = preload('res://collectables/cherry.tscn')
+var Cherry = preload('res://collectables/cherry.tscn')
 
 
 
 
 func _on_timer_timeout():
 	var cherryTemp = Cherry.instantiate()
-	var rng = RandomNumberGenerator.new()
-	var randint = rng.randi_range(50, 1984)
-	cherryTemp.position = Vector2(randint, 310)
+	var gemTemp = 
+	cherryTemp.position = Vector2(15, 335)
+	cherryTemp.position = Vector2(65, 335)
 	$Node2D.add_child(cherryTemp)
 "
 
