@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8lkmbbm0atw3"]
+[gd_scene load_steps=14 format=3 uid="uid://b8lkmbbm0atw3"]
 
 [ext_resource type="Texture2D" uid="uid://dof2jq7xadi11" path="res://game_assets/Sunny-land-files/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_07x3r"]
 [ext_resource type="Texture2D" uid="uid://pxlp2ngko3as" path="res://game_assets/Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="1_sj1i4"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://me6vm4gnqmac" path="res://ui/hud.tscn" id="5_iyx6q"]
 [ext_resource type="Texture2D" uid="uid://lepj1xa8v2c5" path="res://game_assets/Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Props/platform-long.png" id="6_x1qyl"]
 [ext_resource type="PackedScene" uid="uid://dem54i7p1h1dq" path="res://mobs/frog.tscn" id="7_hsekq"]
+[ext_resource type="PackedScene" uid="uid://dy0y5jytp7a48" path="res://Global/next_level.tscn" id="8_1obah"]
+[ext_resource type="PackedScene" uid="uid://dcrlocbk8ib2f" path="res://extra/kill_zone.tscn" id="9_xjh1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fdad"]
 texture = ExtResource("1_07x3r")
@@ -434,10 +436,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5fdad")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ua5k"]
-size = Vector2(608, 3.8147e-05)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7e6"]
-size = Vector2(720, 18)
+size = Vector2(751, 0.00135827)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgluh"]
 size = Vector2(32, 16)
@@ -471,28 +470,25 @@ position = Vector2(-37, 155)
 position = Vector2(410, 167)
 
 [node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-1.90735e-05, -128)
+[node name="wall" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-64.0007, -161.5)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_8ua5k")
 one_way_collision = true
 one_way_collision_margin = 128.0
 
-[node name="Kill_zone" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Kill_zone"]
-motion_mirroring = Vector2(720, 0)
-
-[node name="Kill_zone" type="Area2D" parent="Kill_zone/ParallaxLayer"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill_zone/ParallaxLayer/Kill_zone"]
-position = Vector2(352, 352)
-shape = SubResource("RectangleShape2D_fl7e6")
+[node name="wall2" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-0.000550239, -169)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8ua5k")
+one_way_collision = true
+one_way_collision_margin = 128.0
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Control" parent="UI" instance=ExtResource("5_iyx6q")]
+[node name="Hud" parent="UI" instance=ExtResource("5_iyx6q")]
 
 [node name="Collectables" type="Node2D" parent="."]
 script = ExtResource("5_isq8f")
@@ -533,3 +529,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="one_way_platform/Platform3/StaticBody2D"]
 shape = SubResource("RectangleShape2D_wgluh")
 one_way_collision = true
+
+[node name="Next_level" parent="." instance=ExtResource("8_1obah")]
+
+[node name="kill_zone" parent="." instance=ExtResource("9_xjh1j")]

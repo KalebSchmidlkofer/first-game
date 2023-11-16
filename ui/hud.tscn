@@ -60,7 +60,7 @@ func _process(delta):
 	
 "
 
-[node name="Control" type="Control"]
+[node name="hud" type="Control"]
 layout_mode = 3
 anchor_right = 0.063
 anchor_bottom = 0.164

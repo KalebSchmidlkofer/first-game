@@ -35,19 +35,15 @@ func _physics_process(delta):
 			anim.play('idle')
 	if velocity.y > 0:
 		anim.play('fall')
+	#move_and_collide()
 	move_and_slide()
 	
 	if Game.playerHP <= 0:
 		queue_free()
 		get_tree().change_scene_to_file("res://main.tscn")
 
+		
 func _input(event: InputEvent):
 	if(event.is_action_pressed("ui_down") && is_on_floor()):
 		position.y +=1
-
-
-func _on_kill_zone_body_entered(body):
-	if body.name == 'Player':
-		Game.playerHP == 0
-		
 
