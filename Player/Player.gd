@@ -7,6 +7,11 @@ var is_jumping: bool = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = $AnimationPlayer
 
+func _ready():
+	print(position)
+
+func respawn():
+	get_tree().reload_current_scene()
 
 func _physics_process(delta):
 	# Add the gravity.
